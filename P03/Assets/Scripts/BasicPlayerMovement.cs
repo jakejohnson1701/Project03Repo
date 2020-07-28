@@ -21,10 +21,8 @@ public class BasicPlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
             Move();
             Fire();
-        
     }
 
     public void Move()
@@ -71,8 +69,7 @@ public class BasicPlayerMovement : MonoBehaviour
 
     //when called this function fires a raycast in the direction of the camera 
     //when another object is hit the function checks if the hit object was an enemy
-    //if so, the player ability activation sound is played and the player ability is applied to the enemy (stun fied that disables enemy
-    //the players score is increased by 10 for every enemy they stun
+    //if so, the enemy is destroyed
     
     public void Shoot()
     {

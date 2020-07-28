@@ -10,7 +10,6 @@ public class BasicEnemyBehavior : MonoBehaviour
     void Start()
     {
         tr_CommandPost = GameObject.FindGameObjectWithTag("Post").transform;
-
     }
 
     // Update is called once per frame

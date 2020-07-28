@@ -252,7 +252,10 @@ MonoBehaviour:
   progressBar: {fileID: 712747452}
   PostChangeSound: {fileID: 8300000, guid: f824014d77556d246b03529ef7eedf4d, type: 3}
   PostProgressSound: {fileID: 8300000, guid: cf381921326428a4ca362628af0a6ca0, type: 3}
-  PostInterruptSound: {fileID: 0}
+  EnemyCaptureVoiceover: {fileID: 8300000, guid: 9952a1d1bb8e2b744b61846bdf8afb04,
+    type: 3}
+  AllyCaptureVoiceover: {fileID: 8300000, guid: dd397ac9c6a5bb24aacc2ccdf968909c,
+    type: 3}
 --- !u!114 &138273381 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4806799958378379513, guid: 4eb43d574328eb24798b2ad4116a18f0,

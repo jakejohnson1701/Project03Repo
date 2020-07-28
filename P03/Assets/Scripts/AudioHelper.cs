@@ -4,7 +4,6 @@ using UnityEngine;
 
 public static class AudioHelper
 {
-
     public static AudioSource PlayClip2D(AudioClip clip, float volume)
     {
         //create new audio source 
