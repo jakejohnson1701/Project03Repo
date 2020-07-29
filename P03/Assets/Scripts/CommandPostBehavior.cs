@@ -17,7 +17,8 @@ public class CommandPostBehavior : MonoBehaviour
     [SerializeField] ProgressBar progressBar;
     int minProgress = 0;
     int currentProgress;
-    [SerializeField] AudioClip PostChangeSound;
+    [SerializeField] AudioClip PostCaptureSound;
+    [SerializeField] AudioClip PostLostSound;
     [SerializeField] AudioClip PostProgressSound;
     [SerializeField] AudioClip EnemyCaptureVoiceover;
     [SerializeField] AudioClip AllyCaptureVoiceover;
@@ -115,7 +116,7 @@ public class CommandPostBehavior : MonoBehaviour
             if (PlayerInArea == true && ProgressCounter == TimeUntilNeutral)
             {
                 CommandPostLight.color = Color.white;
-                AudioHelper.PlayClip2D(PostChangeSound, 1);
+                AudioHelper.PlayClip2D(PostLostSound, 1);
                 ProgressCounter = 0;
                 ProgressBarColor.color = Color.blue;
             }
@@ -134,7 +135,7 @@ public class CommandPostBehavior : MonoBehaviour
             if (PlayerInArea == true && ProgressCounter == TimeUntilCapture)
             {
                 CommandPostLight.color = Color.blue;
-                AudioHelper.PlayClip2D(PostChangeSound, 1);
+                AudioHelper.PlayClip2D(PostCaptureSound, 1);
                 AudioHelper.PlayClip2D(AllyCaptureVoiceover, 1);
                 ProgressCounter = 0;
             }
@@ -147,7 +148,7 @@ public class CommandPostBehavior : MonoBehaviour
     IEnumerator EnemyCaptureSequence()
     {
 
-        while (enabled && ProgressCounter < 10)
+        while ((enabled && ProgressCounter < 10) && EnemyInArea == true)
         {
             //wait for one second then increase progress counter by 1
             //increase progress bar by 10 percent and play audio feedback as well
@@ -160,7 +161,7 @@ public class CommandPostBehavior : MonoBehaviour
             if (EnemyInArea == true && ProgressCounter == TimeUntilCapture)
             {
                 CommandPostLight.color = Color.red;
-                AudioHelper.PlayClip2D(PostChangeSound, 1);
+                AudioHelper.PlayClip2D(PostCaptureSound, 1);
                 AudioHelper.PlayClip2D(EnemyCaptureVoiceover, 1);
             }
             
